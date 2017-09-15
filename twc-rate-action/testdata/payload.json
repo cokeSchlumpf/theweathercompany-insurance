@@ -1,0 +1,70 @@
+{
+  "_id": "843f8e14ae60c56d4c487dd76b571313",
+  "_rev": "1-91220a477a6291893dec334284bd8bc8",
+  "context": {
+    "wcs": {
+      "intents": [
+        {
+          "intent": "WantToDrive",
+          "confidence": 0.939996099472046
+        }
+      ],
+      "entities": [
+        {
+          "entity": "sys-location",
+          "location": [
+            18,
+            24
+          ],
+          "value": "Dallas",
+          "confidence": 0.822233
+        },
+        {
+          "entity": "sys-location",
+          "location": [
+            28,
+            34
+          ],
+          "value": "Boston",
+          "confidence": 0.957444
+        }
+      ],
+      "input": {
+        "text": "I want to go from Dallas to Boston"
+      },
+      "output": {
+        "text": [
+          "I didn't understand. You can try rephrasing."
+        ],
+        "nodes_visited": [
+          "Anything else"
+        ],
+        "log_messages": []
+      }
+    },
+    "message": [
+      "I didn't understand. You can try rephrasing."
+    ]
+  },
+  "id": "fe70def8-e62b-4a51-a082-44a111156a6f",
+  "output": {
+    "sent": [
+      {
+        "channel": "facebook",
+        "timestamp": 1505462869,
+        "intent": "I didn't understand. You can try rephrasing.",
+        "context": {},
+        "message": "I didn't understand. You can try rephrasing.",
+        "user": "1591210007616227"
+      }
+    ]
+  },
+  "type": "payload",
+  "user": "c920388a9294d48db277db1d81a78db2",
+  "input": {
+    "user": "1591210007616227",
+    "message": "I want to go from Dallas to Boston",
+    "channel": "facebook",
+    "timestamp": 1505462852
+  }
+}

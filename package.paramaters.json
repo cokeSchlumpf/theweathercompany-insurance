@@ -1,0 +1,87 @@
+{
+  "config": {
+    "cloudant": {
+      "database": "twc-demo",
+      "url": "https://b33e09bd-c08b-4b6f-a6f3-79f121d38be2-bluemix:0d912b22354de5014c1b3cb33c7371bbfecf60b1aca59562792263eafd7b5988@b33e09bd-c08b-4b6f-a6f3-79f121d38be2-bluemix.cloudant.com"
+    },
+    "conversation": {
+      "username": "b45324af-4c5f-4da4-8c73-bdb81b6f423f",
+      "password": "hK2bHyULzN0H",
+      "workspace": "32825027-beea-46ea-8b09-61a6724eb245"
+    },
+    "connectors": {
+      "input": [
+        {
+          "channel": "facebook",
+          "action": "twc-bot/channels-facebook-input",
+          "parameters": {}
+        }
+      ],
+      "output": [
+        {
+          "channel": "facebook",
+          "action": "twc-bot/channels-facebook-output",
+          "parameters": {}
+        }
+      ]
+    },
+    "facebook": {
+      "verify_token": "af10ccfc40",
+      "access_token": "EAAEOaFHvefUBAMLNUhkUzZCLCWAjZCySlwuZCmZAWY4Q7wKyoa7J5twEAr5RRFPk6rHreZB7V2obajZBYWysdkedywptV5WsPZCrDb2B1x9i8y0ktSE2WGkjct00LeOfLIeAYr7JmGNAVWeM5jZBFirKaBwQFUpZBBYQYeWswtH7BywZDZD"
+    },
+    "logger": {
+      "level": "INFO"
+    },
+    "messages": {
+      "Hello": {
+        "text": [
+          "Hello, how are you doing?",
+          "What's up?",
+          "Hi! How are you doing?"
+        ]
+      },
+      "Yes": {
+        "text": [
+          "Cool. Have fun!",
+          "Great, see you next time."
+        ]
+      },
+      "No": {
+        "text": [
+          "Ok, but please stay safe!",
+          "But don't tell me that I haven't told you!",
+          "Let me know when you arrived :)"
+        ]
+      },
+      "CheapInsurance": {
+        "text": "The weather looks good. You're on the cheapest plan!"
+      },
+      "NormalInsurance": {
+        "text": "The weather is not perfect but still ok, you're on the normal plan!"
+      },
+      "HighInsurance": {
+        "text": "Well, it doesn't look well outside, are you sure you want to drive? I can only give you the highest rate."
+      },
+      "DontKnowOriginDestination": {
+          "text": "Sorry, I don't know where you want to go :("
+      }
+    },
+    "middleware": [
+      {
+        "action": "twc-bot/middleware-wcs",
+        "parameters": {}
+      },
+      {
+        "action": "twc-bot-generic/twc-rate-action",
+        "parameters": {}
+      },
+      {
+        "action": "twc-bot/middleware-sendmessage",
+        "parameters": {}
+      }
+    ],
+    "openwhisk": {
+      "package": "twc-bot"
+    }
+  }
+}
